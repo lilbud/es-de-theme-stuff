@@ -136,6 +136,6 @@ As a good tip, use the variables and such to cut down on the number of files nee
 
 ## Closing and Conclusion
 
-Hopefully this provides some things to think about in making themes. I'll probably add to this at some point, but this is good for now.
+Hopefully this provides some things to think about in making themes. I'll probably add to this at some point, but this is good for now. Also it is 2am at the time of finishing this and I need sleep
 
 
