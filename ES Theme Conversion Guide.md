@@ -34,7 +34,6 @@ To fix this, simply change any “forceUppercase” tag to “letterCase”. In 
 -   `<forceUppercase>0</forceUppercase>`
 	-   Becomes: `<letterCase>none</letterCase>`
 
----
 
 ## Alignment
 
@@ -42,42 +41,38 @@ Another legacy option, used in the gamelist (and other textboxes) to dictate the
 
 To fix, replace any “alignment” tag with the proper alignment. For gamelists (in 95% of cases) this gets replaced with “horizontalAlignment”. Simply change the tag in the <> brackets. 
 
----
-
 ## Video
 
 The following options have been removed
 
 `<showSnapshotNoVideo>true</showSnapshotNoVideo>`
+
 `<showSnapshotDelay>false</showSnapshotDelay>`
 
 Simply remove them as needed.
 
 Also worth mentioning, video is supported by default now. In earlier versions of EmulationStation, when new features would be added, they might not be compatible with older versions (See FormatVersion below). So, any features outside of basic/detailed would need to be wrapped in a `<feature supported="[NAME]">` tag. No longer needed, as video was supported from the getgo in ES-DE.
 
----
-
 ## FormatVersion:
 
 Remove as needed, was originally used when newer features got added to ES and the theme format needed to be updated. They are backwards compatible but not forwards. (EX. Grid view was version 4, wouldn’t work in version 3). They’re on version 6 or something now I think.
-
----
 
 ## Unused Elements
 
 Before, if you were designing a theme and didn't have a need to show a particular metadata field (like publisher, or a label for rating). You still had to use it, but position it at `<pos>1 1</pos>`. Otherwise, ES would fail to load if something wasn't specified. This is not needed anymore, and can be removed from any themes.
 
----
-
 ## Views and Variants (probably the longest part so far):
 
 These were tags to be used to determine various views like “basic” and “detailed”. These are no longer needed, being replaced by a generic “gamelist” setting. HOWEVER, removing this outright will likely break many themes, unless you convert stuff to the newer format. I have created a “compatibilities.xml” file which emulates the view switching of the original ES. This file will be in the repo with this guide. Pretty much working as follows:
 
-	- First, checks if you’ve used the scrapers to get videos for your games. Most themes have the same layout for both video and detailed views. Just replacing the “image” with a video. 
+	- First, checks if you’ve used the scrapers to get videos for your games. 
+	Most themes have the same layout for both video and detailed views. Just replacing the “image” with a video. 
 
-	- If no videos are found for a certain system, then it falls through to the “detailed” view. Which is all the metadata, plus an image for each.
+	- If no videos are found for a certain system, then it falls through to the “detailed” view. 
+	Which is all the metadata, plus an image for each.
 
-	- If no scraped media is found at all, then it falls through to the original “basic” view. Which is just a gamelist showing all your games. 
+	- If no scraped media is found at all, then it falls through to the original “basic” view. 
+	Which is just a gamelist showing all your games. 
 
 In order to switch these over, any references to “basic/detailed/video” (or any combo of the three). Should be switched to “variant”. ALSO IMPORTANT, add a “view name=”gamelist”” tag underneath this header tag. And make sure to include the closing tags.
 
@@ -106,13 +101,10 @@ becomes
 </variant>
 ```
 
----
-
 ## Metadata and Image Types
 
 ES-DE changes the handling of metadata. Before, it only mattered what you named your elements, and ES would know to display certain information. ES-DE on the other hand, is much more open about it. Text and Image elements can be named whatever you wish, all that is needed is either a "metadata" field (for text), and an "imageType" field (for images). This allows more flexibility, and leaving behind needing "md_image" in your theme files just to get box art. Make sure to check the theme documentation for all possible values, below I'll show an example of each.
 
-```
 <image name="md_image">
 	<imageType>image</imageType> <!--ADD THIS LINE-->
 	<pos>0.763 0.400</pos>
@@ -130,8 +122,6 @@ image is a catch all. And is the safest bet for theme creation. This allows ES s
 </text>
 ```
 This metadata line must be added to every metadata element. Otherwise, ES-DE won't know what to display, and will simply show nothing.
-
----
 
 ## Carousel and Infobar Code 
 
@@ -162,8 +152,6 @@ The code below should be put in the `<view name="system">` section of your theme
 	<zIndex>51</zIndex>
 </text>
 ```
-
----
 
 ## Closing and Other Notes
 
