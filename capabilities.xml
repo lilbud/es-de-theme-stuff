@@ -1,0 +1,46 @@
+<themeCapabilities>
+
+	<themeName>Carbon ORIGINAL</themeName>
+
+	<variant name="video">
+		<label>Video</label>
+		<selectable>false</selectable>
+		<override>
+			<trigger>noVideo</trigger>
+			<useVariant>detailed</useVariant>
+		</override>
+	</variant>
+
+	<variant name="detailed">
+		<label>Detailed</label>
+		<selectable>false</selectable>
+		<override>
+			<trigger>noMedia</trigger>
+			<mediaType>miximage, marquee, screenshot, titlescreen, cover, backcover, 3dbox, physicalmedia, fanart</mediaType>
+			<useVariant>basic</useVariant>
+		</override>
+	</variant>
+
+	<variant name="basic">
+		<label>Basic</label>
+		<selectable>false</selectable>
+	</variant>
+
+	<transitions name="transitions">
+		<label>transitions</label>
+		<selectable>false</selectable>
+		<systemToSystem>instant</systemToSystem>
+		<systemToGamelist>instant</systemToGamelist>
+		<gamelistToGamelist>instant</gamelistToGamelist>
+		<gamelistToSystem>instant</gamelistToSystem>
+		<startupToSystem>instant</startupToSystem>
+		<startupToGamelist>instant</startupToGamelist>
+	</transitions>
+
+	<suppressTransitionProfiles>
+		<entry>builtin-instant</entry>
+		<entry>builtin-slide</entry>
+		<entry>builtin-fade</entry>
+	</suppressTransitionProfiles>
+
+</themeCapabilities>
