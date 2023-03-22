@@ -1,9 +1,5 @@
+# ES-DE Theme Creation Guide
 ### Good practices and tips/tricks
-
-
-creating an easily updateable theme
-
-avoiding repeated code
 
 ## Intro
 
