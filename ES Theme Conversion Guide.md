@@ -105,6 +105,7 @@ becomes
 
 ES-DE changes the handling of metadata. Before, it only mattered what you named your elements, and ES would know to display certain information. ES-DE on the other hand, is much more open about it. Text and Image elements can be named whatever you wish, all that is needed is either a "metadata" field (for text), and an "imageType" field (for images). This allows more flexibility, and leaving behind needing "md_image" in your theme files just to get box art. Make sure to check the theme documentation for all possible values, below I'll show an example of each.
 
+```
 <image name="md_image">
 	<imageType>image</imageType> <!--ADD THIS LINE-->
 	<pos>0.763 0.400</pos>
